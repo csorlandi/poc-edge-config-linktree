@@ -1,0 +1,25 @@
+{
+  "name": "Claudio Orlandi",
+  "avatar": "https://github.com/csorlandi.png",
+  "links": [
+    {
+      "title": "My Personal Site",
+      "url": "https://csorlandi.dev",
+      "image": "https://github.com/csorlandi.png"
+    },
+    {
+      "title": "Vercel.com",
+      "url": "https://vercel.com"
+    }
+  ],
+  "socials": [
+    {
+      "title": "Github",
+      "url": "https://github.com/csorlandi"
+    },
+    {
+      "title": "Twitter",
+      "url": "https://twitter.com/csorlandi"
+    }
+  ]
+}

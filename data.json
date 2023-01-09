@@ -4,22 +4,26 @@
   "links": [
     {
       "title": "My Personal Site",
-      "url": "https://csorlandi.dev",
+      "href": "https://csorlandi.dev",
       "image": "https://github.com/csorlandi.png"
     },
     {
-      "title": "Vercel.com",
-      "url": "https://vercel.com"
+      "title": "Vercel",
+      "href": "https://vercel.com"
+    },
+    {
+      "title": "Next.js",
+      "href": "https://nextjs.org"
     }
   ],
   "socials": [
     {
       "title": "Github",
-      "url": "https://github.com/csorlandi"
+      "href": "https://github.com/csorlandi"
     },
     {
       "title": "Twitter",
-      "url": "https://twitter.com/csorlandi"
+      "href": "https://twitter.com/csorlandi"
     }
   ]
 }

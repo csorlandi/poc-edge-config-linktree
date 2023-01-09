@@ -20,6 +20,8 @@ type Response = {
   socials: Socials[];
 };
 
+export const dynamic = 'force-dynamic';
+
 function LinkCard({
   href,
   title,

@@ -47,11 +47,13 @@ export default function Home() {
         height={100}
         alt={data.name}
       />
-      <h1 className="font-semibold mt-4 mb-8 text-xl">{data.name}</h1>
+      <h1 className="font-semibold mt-4 mb-8 text-xl text-white">
+        {data.name}
+      </h1>
       {data.links.map(link => (
         <LinkCard key={link.href} {...link} />
       ))}
-      <div className="flex gap-4 items-center mt-8">
+      <div className="flex gap-4 items-center mt-8 text-white">
         {data.socials.map(link => {
           if (link.href.includes('twitter')) {
             return <VscTwitter fontSize={36} />;

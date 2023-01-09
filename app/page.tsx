@@ -1,7 +1,24 @@
 import Image from 'next/image';
 import { VscTwitter, VscGithub } from 'react-icons/vsc';
+import { get } from '@vercel/edge-config';
 
-import data from '../data.json';
+type Links = {
+  title: string;
+  href: string;
+  image?: string;
+};
+
+type Socials = {
+  title: string;
+  href: string;
+};
+
+type Response = {
+  name: string;
+  avatar: string;
+  links: Links[];
+  socials: Socials[];
+};
 
 function LinkCard({
   href,
@@ -37,7 +54,11 @@ function LinkCard({
   );
 }
 
-export default function Home() {
+export default async function Page() {
+  const data = await get<Response>('linktree');
+
+  if (!data) return <p>Run to the forest guys...</p>;
+
   return (
     <div className="flex flex-col items-center justify-center mx-auto w-full mt-16 px-8">
       <Image
@@ -50,19 +71,20 @@ export default function Home() {
       <h1 className="font-semibold mt-4 mb-8 text-xl text-white">
         {data.name}
       </h1>
-      {data.links.map(link => (
+      {data?.links.map(link => (
         <LinkCard key={link.href} {...link} />
       ))}
       <div className="flex gap-4 items-center mt-8 text-white">
-        {data.socials.map(link => {
-          if (link.href.includes('twitter')) {
-            return <VscTwitter fontSize={36} />;
-          }
-          if (link.href.includes('github')) {
-            return <VscGithub fontSize={32} />;
-          }
-          return null;
-        })}
+        {data?.socials.map(social => (
+          <a
+            key={social.href}
+            href={social.href}
+            className="hover:scale-125 transition-all"
+          >
+            {social.href.includes('twitter') && <VscTwitter fontSize={36} />}
+            {social.href.includes('github') && <VscGithub fontSize={32} />}
+          </a>
+        ))}
       </div>
     </div>
   );
